@@ -1,6 +1,6 @@
 defmodule NextNextGen.Image do
   use Ecto.Schema
-  alias NextNextGen.File
+  alias NextNextGen.{Collection, File}
 
   import Ecto.Changeset
 
@@ -12,6 +12,7 @@ defmodule NextNextGen.Image do
     timestamps()
 
     has_many(:files, File)
+    many_to_many :collections, Collection, join_through: "images_collections"
   end
 
   def changeset(image, params) do
