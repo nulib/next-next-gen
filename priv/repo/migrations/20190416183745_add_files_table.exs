@@ -5,7 +5,9 @@ defmodule NextNextGen.Repo.Migrations.AddFilesTable do
     create table(:files) do
       add(:original_filename, :string)
       add(:location, :string)
-      add(:images_id, references(:images))
+      add(:image_id, references(:images))
+
+      timestamps()
     end
   end
 end

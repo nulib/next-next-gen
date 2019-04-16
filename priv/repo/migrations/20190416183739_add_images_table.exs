@@ -8,7 +8,9 @@ defmodule NextNextGen.Repo.Migrations.AddImagesTable do
       add(:ark, :string)
       add(:keyword, {:array, :string}, default: [])
 
-      create(unique_index(:images, [:accession_number]))
+      timestamps()
     end
+
+    create(unique_index(:images, [:accession_number]))
   end
 end

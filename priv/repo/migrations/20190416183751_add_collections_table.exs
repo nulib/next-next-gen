@@ -6,6 +6,8 @@ defmodule NextNextGen.Repo.Migrations.AddCollectionsTable do
       add(:title, :string)
       add(:description, :text)
       add(:ark, :string)
+
+      timestamps()
     end
   end
 end

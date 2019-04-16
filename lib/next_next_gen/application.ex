@@ -8,6 +8,7 @@ defmodule NextNextGen.Application do
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
+      NextNextGen.Repo
       # Starts a worker by calling: NextNextGen.Worker.start_link(arg)
       # {NextNextGen.Worker, arg}
     ]

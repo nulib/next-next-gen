@@ -8,7 +8,7 @@ defmodule NextNextGen.Collection do
     field(:description, :string)
     field(:ark, :string)
     timestamps()
-    many_to_many :images, Image, join_through: "images_collections"
+    many_to_many(:images, Image, join_through: "images_collections")
   end
 
   def changeset(collection, params) do
