@@ -3,6 +3,8 @@ defmodule NextNextGen.Collection do
   use Ecto.Schema
   alias NextNextGen.Image
 
+  @primary_key {:id, Ecto.ULID, autogenerate: true}
+  @foreign_key_type Ecto.ULID
   schema "collections" do
     field(:title, :string)
     field(:description, :string)
