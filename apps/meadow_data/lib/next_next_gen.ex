@@ -1,2 +1,0 @@
-defmodule NextNextGen do
-end
