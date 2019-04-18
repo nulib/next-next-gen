@@ -1,4 +1,4 @@
-defmodule NextNextGen.Repo.Migrations.AddFilesTable do
+defmodule Meadow.Data.Repo.Migrations.AddFilesTable do
   use Ecto.Migration
 
   def change do

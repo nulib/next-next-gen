@@ -1,6 +1,6 @@
-defmodule NextNextGen.File do
+defmodule Meadow.Data.File do
   use Ecto.Schema
-  alias NextNextGen.Image
+  alias Meadow.Data.Image
 
   import Ecto.Changeset
 

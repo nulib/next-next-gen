@@ -1,9 +1,9 @@
-defmodule NextNextGen.MixProject do
+defmodule Meadow.Data.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :next_next_gen,
+      app: :meadow_data,
       version: "0.1.0",
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
@@ -25,7 +25,7 @@ defmodule NextNextGen.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {NextNextGen.Application, []}
+      mod: {Meadow.Data.Application, []}
     ]
   end
 

@@ -1,7 +1,7 @@
-defmodule NextNextGen.Collection do
+defmodule Meadow.Data.Collection do
   import Ecto.Changeset
   use Ecto.Schema
-  alias NextNextGen.Image
+  alias Meadow.Data.Image
 
   @primary_key {:id, Ecto.ULID, autogenerate: true}
   @foreign_key_type Ecto.ULID

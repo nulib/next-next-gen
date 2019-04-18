@@ -10,23 +10,23 @@ use Mix.Config
 
 # You can configure your application as:
 #
-#     config :next_next_gen, key: :value
+#     config :meadow_data, key: :value
 #
 # and access this configuration in your application as:
 #
-#     Application.get_env(:next_next_gen, :key)
+#     Application.get_env(:meadow_data, :key)
 #
 # You can also configure a third-party app:
 #
 #     config :logger, level: :info
 #
 
-config :next_next_gen, :ecto_repos, [NextNextGen.Repo]
+config :meadow_data, :ecto_repos, [Meadow.Data.Repo]
 
-config :next_next_gen, NextNextGen.Repo,
+config :meadow_data, Meadow.Data.Repo,
   username: "postgres",
   password: "postgres",
-  database: "next_next_gen",
+  database: "meadow",
   hostname: "localhost",
   pool_size: 10
 
