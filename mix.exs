@@ -1,38 +1,19 @@
-defmodule NextNextGen.MixProject do
+defmodule Meadow.Mixfile do
   use Mix.Project
-
   def project do
     [
-      app: :next_next_gen,
-      version: "0.1.0",
-      elixir: "~> 1.8",
+      apps_path: "apps",
       start_permanent: Mix.env() == :prod,
-      deps: deps(),
-      aliases: aliases()
+      deps: deps()
     ]
   end
 
-  # Run "mix help compile.app" to learn about applications.
-  def application do
-    [
-      extra_applications: [:logger],
-      mod: {NextNextGen.Application, []}
-    ]
-  end
-
-  # Run "mix help deps" to learn about dependencies.
+  # Dependencies listed here are available only for this
+  # project and cannot be accessed from applications inside
+  # the apps folder.
+  #
+  # Run "mix help deps" for examples and options.
   defp deps do
-    [
-      {:postgrex, ">= 0.0.0"},
-      {:ecto_sql, "~> 3.0"},
-      {:jason, "~> 1.1"}
-    ]
-  end
-
-  defp aliases do
-    [
-      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-      "ecto.reset": ["ecto.drop", "ecto.setup"]
-    ]
+    []
   end
 end
