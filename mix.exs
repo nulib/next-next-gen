@@ -14,7 +14,8 @@ defmodule Meadow.Mixfile do
         "coveralls.detail": :test,
         "coveralls.post": :test,
         "coveralls.html": :test
-      ]
+      ],
+      test_coverage: [tool: ExCoveralls, test_task: "test"]
     ]
   end
 

@@ -1,5 +1,7 @@
 # Meadow
 
+[![CircleCI](https://circleci.com/gh/nulib/next-next-gen.svg?style=svg)](https://circleci.com/gh/nulib/next-next-gen) [![Coverage Status](https://coveralls.io/repos/github/nulib/next-next-gen/badge.svg?branch=master)](https://coveralls.io/github/nulib/next-next-gen?branch=master)
+
 **TODO: Add description**
 
 ## Installation
