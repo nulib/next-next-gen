@@ -1,9 +1,11 @@
-defmodule NextNextGen.Image do
+defmodule Meadow.Data.Image do
   use Ecto.Schema
-  alias NextNextGen.{Collection, File}
+  alias Meadow.Data.{Collection, File}
 
   import Ecto.Changeset
 
+  @primary_key {:id, Ecto.ULID, autogenerate: true}
+  @foreign_key_type Ecto.ULID
   schema "images" do
     field(:title, :string)
     field(:accession_number, :string)

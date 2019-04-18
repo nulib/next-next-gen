@@ -10,7 +10,7 @@ by adding `meadow` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:meadow, "~> 0.1.0"}
+    {:meadow_data, "~> 0.1.0"}
   ]
 end
 ```

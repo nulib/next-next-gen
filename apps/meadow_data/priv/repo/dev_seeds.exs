@@ -1,5 +1,5 @@
-alias NextNextGen.Repo
-alias NextNextGen.{Collection, File, Image}
+alias Meadow.Data.Repo
+alias Meadow.Data.{Collection, File, Image}
 
 Repo.insert!(%Collection{
   title: "Collection One",
