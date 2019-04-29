@@ -1,5 +1,5 @@
 alias Meadow.Data.Repo
-alias Meadow.Data.{Collection, File, Image}
+alias Meadow.Data.{Collection, FileSet, Image}
 
 Repo.insert!(%Collection{
   title: "Collection One",
@@ -8,16 +8,16 @@ Repo.insert!(%Collection{
     %Image{
       title: "Great Image",
       keyword: ["great", "image"],
-      files: [
-        %File{
+      file_sets: [
+        %FileSet{
           original_filename: "So_What.txt",
           location: "https://library.northwestern.edu/1"
         },
-        %File{
+        %FileSet{
           original_filename: "So_What_Again.txt",
           location: "https://library.northwestern.edu/2"
         },
-        %File{
+        %FileSet{
           original_filename: "So_What_AGAIN.txt",
           location: "https://library.northwestern.edu/3"
         }
@@ -26,12 +26,12 @@ Repo.insert!(%Collection{
     %Image{
       title: "Bad Image",
       keyword: ["bad", "image"],
-      files: [
-        %File{
+      file_sets: [
+        %FileSet{
           original_filename: "So_What_now.txt",
           location: "https://library.northwestern.edu/4"
         },
-        %File{
+        %FileSet{
           original_filename: "So_What_Again_please.txt",
           location: "https://library.northwestern.edu/5"
         }

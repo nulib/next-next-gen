@@ -1,4 +1,4 @@
-defmodule Meadow.Data.File do
+defmodule Meadow.Data.FileSet do
   use Ecto.Schema
   alias Meadow.Data.Image
 
@@ -6,7 +6,7 @@ defmodule Meadow.Data.File do
 
   @primary_key {:id, Ecto.ULID, autogenerate: true}
   @foreign_key_type Ecto.ULID
-  schema "files" do
+  schema "file_sets" do
     field(:original_filename, :string)
     field(:location, :string)
     timestamps()
@@ -14,8 +14,8 @@ defmodule Meadow.Data.File do
     belongs_to(:image, Image)
   end
 
-  def changeset(file, params) do
-    file
+  def changeset(file_set, params) do
+    file_set
     |> cast(params, [:original_filename, :string])
     |> validate_required([:original_filename, :string])
   end

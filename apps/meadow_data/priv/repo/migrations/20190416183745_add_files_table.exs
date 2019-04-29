@@ -1,8 +1,8 @@
-defmodule Meadow.Data.Repo.Migrations.AddFilesTable do
+defmodule Meadow.Data.Repo.Migrations.AddFileSetsTable do
   use Ecto.Migration
 
   def change do
-    create table(:files, primary_key: false) do
+    create table(:file_sets, primary_key: false) do
       add(:id, :binary_id, null: false, primary_key: true)
       add(:original_filename, :string)
       add(:location, :string)
