@@ -15,7 +15,7 @@ defmodule Meadow.Data.Collection do
 
   def changeset(collection, params) do
     collection
-    |> cast(params, [:title])
+    |> cast(params, [:title, :description, :ark])
     |> validate_required([:title])
   end
 end
