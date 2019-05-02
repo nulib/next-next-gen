@@ -23,3 +23,4 @@ erl_crash.dump
 meadow-*.tar
 
 **/.elixir_ls/
+**/.vscode/
