@@ -16,7 +16,7 @@ defmodule Meadow.Data.FileSet do
 
   def changeset(file_set, params) do
     file_set
-    |> cast(params, [:original_filename, :string])
-    |> validate_required([:original_filename, :string])
+    |> cast(params, [:original_filename])
+    |> validate_required([:original_filename])
   end
 end
