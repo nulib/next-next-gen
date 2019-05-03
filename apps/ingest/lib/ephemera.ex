@@ -23,11 +23,12 @@ defmodule Meadow.Ingest.Ephemera do
   @doc """
   Fetch a value
   """
-  def fetch(resource, key),
-    do:
-      :ets.match(table(), {resource, key, :"$3"})
-      |> List.first()
-      |> List.first()
+  def fetch(resource, key) do
+    case :ets.match(table(), {resource, key, :"$3"}) do
+      [] -> nil
+      [[val]] -> val
+    end
+  end
 
   @doc """
   Delete a value

@@ -9,8 +9,8 @@ defmodule Meadow.Ingest.Storage do
   @doc """
   Make sure the target storage bucket exists
   """
-  def ensure_bucket_exists() do
-    case storage_bucket() do
+  def ensure_bucket_exists(bucket \\ storage_bucket()) do
+    case bucket do
       :undefined ->
         {:error, "Storage bucket not configured"}
 
