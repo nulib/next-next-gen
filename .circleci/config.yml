@@ -11,6 +11,10 @@ jobs:
           POSTGRES_DB: meadow_test
           POSTGRES_USER: docker
           POSTGRES_PASSWORD: d0ck3r
+      - image: minio/minio
+        environment:
+          MINIO_ACCESS_KEY: minio
+          MINIO_SECRET_KEY: minio123
 
     working_directory: ~/app
 
