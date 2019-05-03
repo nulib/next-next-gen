@@ -17,14 +17,9 @@ defmodule Meadow.Data.Image do
     many_to_many(:collections, Collection, join_through: "images_collections")
   end
 
-  @spec changeset(
-          {map(), map()}
-          | %{:__struct__ => atom() | %{__changeset__: map()}, optional(atom()) => any()},
-          :invalid | %{optional(:__struct__) => none(), optional(atom() | binary()) => any()}
-        ) :: Ecto.Changeset.t()
   def changeset(image, params) do
     image
-    |> cast(params, [:title])
+    |> cast(params, [:title, :accession_number, :ark, :keyword])
     |> validate_required([:title])
   end
 end
