@@ -12,6 +12,7 @@ jobs:
           POSTGRES_USER: docker
           POSTGRES_PASSWORD: d0ck3r
       - image: minio/minio
+        command: "mkdir -p /data && minio server /data"
         environment:
           MINIO_ACCESS_KEY: minio
           MINIO_SECRET_KEY: minio123
