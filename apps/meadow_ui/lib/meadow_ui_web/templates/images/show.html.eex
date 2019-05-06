@@ -1,0 +1,24 @@
+<h1> <%= @image.title %></h1>
+<ul>
+  <li>
+    <strong>Accession number:</strong>
+    <%= @image.accession_number %>
+  </li>
+  <li>
+    <strong>ARK:</strong>
+    <%= @image.ark %>
+  </li>
+  <li>
+    <strong>Keywords:</strong> <%= Enum.join(@image.keyword, ", ") %>
+  </li>
+  <li>
+    <strong>Files: </strong> 
+    <ul>
+      <%= for file_set <- @image.file_sets do %>
+      <li><%= file_set.original_filename %></li>
+      <% end %>
+    </ul>
+  </li>
+</ul>
+ 
+<span><%= link "Back", to: Routes.images_path(@conn, :index) %></span>

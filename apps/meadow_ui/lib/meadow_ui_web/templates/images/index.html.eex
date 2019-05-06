@@ -1,0 +1,22 @@
+<h1>Repository - Objects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Accession number</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for image <- @images do %>
+    <tr>
+      <td><%= image.title %></td>
+      <td><%= image.accession_number %></td>
+      <td>
+        <%= link "Show details", to: Routes.images_path(@conn, :show, image) %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
