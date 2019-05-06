@@ -2,15 +2,14 @@ defmodule Mix.Tasks.Meadow.CreateManifest do
   use Mix.Task
   alias NimbleCSV.RFC4180, as: CSV
 
-  @keywords ~w(unknown obtainable pale reflective minor phobic spotty exchange foot girl obedient breath heap loud club)
-
   @impl Mix.Task
   @shortdoc "Generate a manifest of random images from Flickr"
-  def run([count | [filename | [email | []]]]) do
+  def run([count | [filename | []]]) do
+    Faker.start()
     {:ok, _started} = Application.ensure_all_started(:httpoison)
 
     [
-      [email, nil, nil, nil, nil, nil]
+      [Faker.Internet.email(), nil, nil, nil, nil, nil]
       | [
           ~w(accession_number title description keyword keyword keyword file file file file file)
           | build_manifest(String.to_integer(count), Path.join(Path.dirname(filename), "files"))
@@ -21,19 +20,35 @@ defmodule Mix.Tasks.Meadow.CreateManifest do
     |> Stream.run()
   end
 
+  defp new_accession_number(list) do
+    accession_no = Faker.Nato.format("?-#-?-?-?")
+
+    case Enum.member?(list, accession_no) do
+      true -> new_accession_number(list)
+      false -> accession_no
+    end
+  end
+
   defp build_manifest(count, file_location) do
+    powers = Enum.map(1..20, fn _ -> Faker.Superhero.power() end)
+
+    accession_list =
+      Enum.reduce(Range.new(1, count), [], fn _, acc ->
+        acc ++ [new_accession_number(acc)]
+      end)
+
     Range.new(1, count)
-    |> Enum.map(fn row ->
+    |> Enum.map(fn index ->
       [
-        "acc.#{row}",
-        "Object ##{row}",
-        "Description of Object ##{row}"
-      ] ++ keywords() ++ files(file_location)
+        Enum.at(accession_list, index),
+        Faker.Lorem.sentence(),
+        Faker.Lorem.paragraph()
+      ] ++ keywords(powers) ++ files(file_location)
     end)
   end
 
-  defp keywords() do
-    random_padded_list(@keywords, 0, 3)
+  defp keywords(list) do
+    random_padded_list(list, 0, 3)
   end
 
   defp files(location) do

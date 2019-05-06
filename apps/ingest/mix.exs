@@ -35,6 +35,7 @@ defmodule Ingest.MixProject do
     [
       {:ex_aws, "~> 2.0.0"},
       {:ex_aws_s3, "~> 2.0.0"},
+      {:faker, "~> 0.8.0", only: [:dev, :test]},
       {:httpoison, "~> 1.5"},
       {:nimble_csv, "~> 0.6.0"},
       {:poison, "~> 4.0.1"},
