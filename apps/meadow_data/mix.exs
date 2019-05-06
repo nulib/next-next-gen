@@ -37,7 +37,8 @@ defmodule Meadow.Data.MixProject do
       {:ecto_sql, "~> 3.0"},
       {:ecto_ulid, "~> 0.2.0"},
       {:jason, "~> 1.1"},
-      {:httpoison, "~> 1.5"}
+      {:httpoison, "~> 1.5"},
+      {:redix, "~> 0.8.0"}
     ]
   end
 

@@ -3,8 +3,8 @@ defmodule Meadow.Ingest do
   Ingest manifests, create Images and FileSets
   """
 
-  alias Meadow.Ingest.{Ephemera, Manifest, Storage}
-  alias Meadow.Data.{FileSet, Image, Repo}
+  alias Meadow.Ingest.{Manifest, Storage}
+  alias Meadow.Data.{Ephemera, FileSet, Image, Repo}
 
   @doc """
   Ingest a manifest full of Image objects

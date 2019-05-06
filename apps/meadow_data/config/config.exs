@@ -30,6 +30,10 @@ config :meadow_data, Meadow.Data.Repo,
   hostname: "localhost",
   pool_size: 10
 
+config :meadow_data, Meadow.Data.Ephemera,
+  host: "localhost",
+  port: 6379
+
 # It is also possible to import configuration files, relative to this
 # directory. For example, you can emulate configuration per environment
 # by uncommenting the line below and defining dev.exs, test.exs and such.

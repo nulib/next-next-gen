@@ -7,3 +7,7 @@ config :meadow_data, Meadow.Data.Repo,
   hostname: "localhost",
   port: if(System.get_env("CI"), do: 5432, else: 5434),
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :meadow_data, Meadow.Data.Ephemera,
+  host: "localhost",
+  port: 6381

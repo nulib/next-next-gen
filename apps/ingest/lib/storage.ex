@@ -2,7 +2,7 @@ defmodule Meadow.Ingest.Storage do
   @moduledoc """
   Functions related to FileSet binary storage
   """
-  alias Meadow.Ingest.Ephemera
+  alias Meadow.Data.Ephemera
 
   @source_key "source_location"
 
