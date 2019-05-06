@@ -6,4 +6,5 @@ config :meadow_data, Meadow.Data.Repo,
   database: "meadow_dev",
   hostname: "localhost",
   port: 5433,
-  pool_size: 10
+  pool_size: 10,
+  log: false
