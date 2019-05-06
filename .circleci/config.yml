@@ -16,6 +16,7 @@ jobs:
         environment:
           MINIO_ACCESS_KEY: minio
           MINIO_SECRET_KEY: minio123
+      - image: circleci/redis:5-alpine
 
     working_directory: ~/app
 

@@ -10,4 +10,4 @@ config :meadow_data, Meadow.Data.Repo,
 
 config :meadow_data, Meadow.Data.Ephemera,
   host: "localhost",
-  port: 6381
+  port: if(System.get_env("CI"), do: 6379, else: 6381)
