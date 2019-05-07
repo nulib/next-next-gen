@@ -1,9 +1,9 @@
-defmodule MeadowIngestEphemeraTest do
+defmodule MeadowDataEphemeraTest do
   use ExUnit.Case
-  doctest Meadow.Ingest.Ephemera
+  doctest Meadow.Data.Ephemera
 
   describe "ephemeral storage" do
-    alias Meadow.Ingest.Ephemera
+    alias Meadow.Data.Ephemera
 
     @resource "01D9Z7C1JYCPSP4P8V0P5AG958"
 

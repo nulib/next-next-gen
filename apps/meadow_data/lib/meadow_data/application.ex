@@ -8,7 +8,8 @@ defmodule Meadow.Data.Application do
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
-      Meadow.Data.Repo
+      Meadow.Data.Repo,
+      {Redix, Application.get_env(:meadow_data, Meadow.Data.Ephemera) ++ [name: :ephemera]}
       # Starts a worker by calling: Meadow.Data.Worker.start_link(arg)
       # {Meadow.Data.Worker, arg}
     ]
