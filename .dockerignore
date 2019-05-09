@@ -1,0 +1,8 @@
+**/assets/node_modules/*
+**/.elixir_ls
+**/.vscode
+**/_build
+**/deps/*
+**/doc
+Dockerfile
+apps/*/mix.lock

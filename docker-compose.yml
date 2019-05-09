@@ -1,0 +1,26 @@
+---
+version: "3.2"
+networks:
+  stack:
+    external:
+      name: devstack_default
+services:
+  meadow:
+    image: nulib/meadow
+    build:
+      context: .
+    networks: 
+      - stack
+    ports:
+      - 4000:4000
+    environment:
+      REDIS_HOST: redis 
+      REDIS_PORT: 6379 
+      DATABASE_URL: postgres://docker:d0ck3r@db/meadow_prod 
+      MEADOW_STORAGE_BUCKET: prod-masters 
+      AWS_ENDPOINT: http://minio:9000/ 
+      AWS_DEFAULT_REGION: us-east-1 
+      AWS_ACCESS_KEY_ID: minio 
+      AWS_SECRET_ACCESS_KEY: minio123 
+    volumes:
+      - /Users/mbk836/Downloads/batch:/batch
